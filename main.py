@@ -1,5 +1,8 @@
-homework_done = 12
-hours_spent = 1.5
-course_name = 'Python'
-time_per_task = hours_spent/homework_done
-print(course_name,homework_done,hours_spent,time_per_task)
+name = 'Alexander'
+print( name )
+age = 68
+print(age)
+new_age = 68 + 1
+print(new_age)
+is_student = True
+print(is_student)
