@@ -1,9 +1,14 @@
-immutable_var=(1,'Hello',0.125, True)
-print('tuple_immutable_var:',immutable_var)
-#immutable_var[0]=2
-#print(immutable_var)
-mutable_list = [1,2,3,4,5]
-mutable_list[0]=55
-mutable_list.append('59')
-mutable_list.remove(2)
-print(mutable_list)
+my_dict = {'Ivan' : 1980,'Peter': 1984,'Alex':1999}
+print(my_dict)
+print(my_dict ['Ivan'])
+print(my_dict.get('Fill'))
+my_dict.update({'Luda':2004,
+                'Tanya':1994})
+print(my_dict)
+my_dict.pop('Peter')
+print(my_dict)
+my_set={1,2,3,4,'string','True',2,4}
+print(my_set)
+my_set.update([5,6])
+my_set.remove('True')
+print(my_set)
