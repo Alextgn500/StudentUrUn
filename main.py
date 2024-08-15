@@ -1,14 +1,17 @@
-my_dict = {'Ivan' : 1980,'Peter': 1984,'Alex':1999}
-print(my_dict)
-print(my_dict ['Ivan'])
-print(my_dict.get('Fill'))
-my_dict.update({'Luda':2004,
-                'Tanya':1994})
-print(my_dict)
-my_dict.pop('Peter')
-print(my_dict)
-my_set={1,2,3,4,'string','True',2,4}
-print(my_set)
-my_set.update([5,6])
-my_set.remove('True')
-print(my_set)
+grades = [[5, 3, 3, 5, 4], [2, 2, 2, 3], [4, 5, 5, 2], [4, 4, 3], [5, 5, 5, 4, 5]]
+students = {'Johnny', 'Bilbo', 'Steve', 'Khendrik', 'Aaron'}
+students_list = sorted(students)
+print(students_list)
+result = {}
+#Объединяем списки students_list и grades с использованием zip()
+for student, grades_list in zip(students_list, grades):
+    average = sum(grades_list)/len(grades_list)
+    #округляем до двух знаков после запятой
+    average_grade = round(average, 2)
+    #добавляем пару "ученик : средний бал" в словарь
+    result[student] = average_grade
+# Выводим результат
+print("Средние баллы учеников")
+for student, average in result.items():
+    print(f"{student}: {average}")
+
