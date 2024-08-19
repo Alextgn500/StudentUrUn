@@ -1,40 +1,21 @@
-# Функция для выполнения проверки
-def check_equal_numbers(a, b, c):
-    if a == b == c:
-        return 3
-    elif a == b or b == c or a == c:
-        return 2
-    else:
-        return 0
+my_list = [42, 69, 322, 13, 0, 99, -5, 9, 8, 7, -6, 5]
 
-# Сценарий 1: Все числа разные
-print("Сценарий 1: Все числа разные")
-first, second, third = 123,456,789
-result = check_equal_numbers(first, second, third)
-print(f"Числа: {first}, {second}, {third}")
-print(f"Результат: {result}\n")
+# Первая часть: до первого отрицательного числа
+index = 0
+while index < len(my_list) and my_list[index] >= 0:
+    if my_list[index] > 0:
+        print("Положительное число до отрицательного:", my_list[index])
+    index += 1
 
-# Сценарий 2: Два числа равны
-print("Сценарий 2: Два числа равны")
-first, second, third = 42,69,42
-result = check_equal_numbers(first, second, third)
-print(f"Числа: {first}, {second}, {third}")
-print(f"Результат: {result}\n")
+# Вторая часть: после первого отрицательного числа
+if index < len(my_list):
+    print("Найдено отрицательное число:", my_list[index])
+    index += 1
+    while index < len(my_list):
+        if my_list[index] > 0:
+            print("Положительное число после отрицательного:", my_list[index])
+        index += 1
 
-# Сценарий 3: Все числа равны
-print("Сценарий 3: Все числа равны")
-first, second, third = 5, 5, 5
-result = check_equal_numbers(first, second, third)
-print(f"Числа: {first}, {second}, {third}")
-print(f"Результат: {result}")
-
-
-
-
-
-
-
-
-
+print("Просмотр списка завершен")
 
 
