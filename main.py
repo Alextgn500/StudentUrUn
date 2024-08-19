@@ -1,21 +1,29 @@
-my_list = [42, 69, 322, 13, 0, 99, -5, 9, 8, 7, -6, 5]
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 
-# Первая часть: до первого отрицательного числа
-index = 0
-while index < len(my_list) and my_list[index] >= 0:
-    if my_list[index] > 0:
-        print("Положительное число до отрицательного:", my_list[index])
-    index += 1
+# Создаем пустые списки для простых и не простых чисел
+primes = []
+not_primes = []
 
-# Вторая часть: после первого отрицательного числа
-if index < len(my_list):
-    print("Найдено отрицательное число:", my_list[index])
-    index += 1
-    while index < len(my_list):
-        if my_list[index] > 0:
-            print("Положительное число после отрицательного:", my_list[index])
-        index += 1
+# Перебираем числа из списка numbers
+for num in numbers:
+    # Отмечаем число как простое изначально
+    is_prime = True
 
-print("Просмотр списка завершен")
+    # Проверяем, является ли число простым
+    if num > 1:
+        for i in range(2, int(num ** 0.5) + 1):
+            if num % i == 0:
+                is_prime = False
+                break
+    else:
+        is_prime = False  # 1 не является простым числом
 
+    # Добавляем число в соответствующий список
+    if is_prime:
+        primes.append(num)
+    else:
+        not_primes.append(num)
 
+# Выводим результаты
+print("Простые числа:", primes)
+print("Не простые числа:", not_primes)
