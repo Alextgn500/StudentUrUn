@@ -1,30 +1,25 @@
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+# Исходные данные
+my_list = [42, 69, 322, 13, 0, 99, -5, 9, 8, 7, -6, 5]
 
-# Создаем пустые списки для простых и не простых чисел
-primes = []
-not_primes = []
+# Инициализация индекса
+index = 0
 
-# Перебираем числа из списка numbers
-for num in numbers:
-    # Отмечаем число как простое изначально (флаг)
-    is_prime = True
+# Цикл while для перебора списка
+while index < len(my_list):
+    # Получаем текущий элемент
+    current_element = my_list[index]
 
-    # Проверяем, является ли число простым
-    if num > 1:
-        for i in range(2, int(num ** 0.5) + 1):
-            if num % i == 0:
-                is_prime = False
-                break  # Оптимизация: прерываем цикл, если нашли делитель
-    else:
-        is_prime = False  # 1 не является простым числом
+    # Проверяем условия
+    if current_element < 0:
+        break  # Прерываем цикл, если встретили отрицательное число
+    elif current_element > 0:
+        print(current_element)  # Выводим только положительные числа
 
-    # Добавляем число в соответствующий список
-    if is_prime:
-        primes.append(num)
-    elif num != 1:  # Исключаем 1 из списка not_primes
-        not_primes.append(num)
+    # Увеличиваем индекс
+    index += 1
 
-# Выводим результаты
-print("Простые числа:", primes)
-print("Не простые числа:", not_primes)
+
+
+
+
 
