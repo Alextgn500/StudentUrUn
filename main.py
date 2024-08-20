@@ -1,25 +1,19 @@
-def get_matrix(n, m, value):
-    matrix = []
+# Исходные данные
+my_list = [42, 69, 322, 13, 0, 99, -5, 9, 8, 7, -6, 5]
 
-    if n <= 0 or m <= 0:
-        return matrix
+# Инициализация индекса
+index = 0
 
-    for i in range(n):
-        row = []
-        for j in range(m):
-            row.append(value)
-        matrix.append(row)
+# Цикл while для перебора списка
+while index < len(my_list):
+    # Получаем текущий элемент
+    current_element = my_list[index]
 
-    return matrix
+    # Проверяем условия
+    if current_element < 0:
+        break  # Прерываем цикл, если встретили отрицательное число
+    elif current_element > 0:
+        print(current_element)  # Выводим только положительные числа
 
-
-# Использование функции и вывод результатов
-result1 = get_matrix(2, 2, 10)
-result2 = get_matrix(3, 5, 42)
-result3 = get_matrix(4, 2, 13)
-
-print(result1)
-print(result2)
-print(result3)
-
-
+    # Увеличиваем индекс
+    index += 1
